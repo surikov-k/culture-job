@@ -16,7 +16,9 @@
   }
 
   &__field:last-of-type {
-    margin-bottom: 30px;
+    position: relative;
+
+    margin-bottom: 40px;
   }
 
   &__label {
@@ -69,6 +71,25 @@
       background: url("/public/img/icons/lock.svg") center center no-repeat;
     }
   }
+
+  &__error {
+    font-size: 16px;
+    font-weight: 400;
+    font-style: normal;
+    line-height: normal;
+    position: absolute;
+    top: 100%;
+
+    left: 0;
+    display: none;
+
+    color: #ad0202;
+  }
+
+  .show-error + &__error {
+    display: block;
+  }
+
 
   &__submit {
     width: 100%;

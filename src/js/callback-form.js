@@ -2,35 +2,42 @@ const API_URL = 'https://order.drcash.sh/v1/order';
 const API_TOKEN = 'NWJLZGEWOWETNTGZMS00MZK4LWFIZJUTNJVMOTG0NJQXOTI3';
 const CALLBACK_FORM_ID = 'callback-form';
 const VALIDATE_PHONE_REGEX = /^\+\d{1,3}\(\d{3}\)\s*\d{3}-\d{2}-\d{2}$/
+const SHOW_ER0RR_CLASS = 'show-error';
 
 // 8c4976c8-7235-4aaf-a979-1c5ef22f4002
 // bf0de2f4-c8ef-4898-8be2-594787e8ee6d
 
 export function processCallbackForm() {
+  const submitButton = document.querySelector('.callback-form__submit');
   const form = document.getElementById(CALLBACK_FORM_ID);
 
   if (!form) {
     return;
   }
+  const phoneInput = document.getElementById('phone');
 
   setLocalStorage();
 
-  form.addEventListener('submit', function (event) {
-    event.preventDefault();
-
-    const phone = document.getElementById('phone').value.trim();
+  phoneInput.addEventListener('input', function (event) {
+    const phone = event.target.value;
 
     if (!isPhoneValid(phone)) {
-      alert('Пожалуйста, введите корректный номер телефона');
-      return;
-    }
+      phoneInput.setCustomValidity("Неверный формат");
 
-    if (hasAlreadySent(phone)) {
-      alert('Вы уже отправили заказ. Повторная отправка невозможна.');
-      return;
-    }
+    } else {
+      phoneInput.setCustomValidity("");
 
-    submitForm(this);
+      if (hasAlreadySent(phone)) {
+        phoneInput.setCustomValidity("Вы уже отправили заказ. Повторная отправка невозможна");
+      } else {
+        phoneInput.setCustomValidity("");
+      }
+    }
+  });
+
+  form.addEventListener('submit', function (event) {
+    event.preventDefault();
+    submitForm(form);
   });
 }
 
@@ -47,8 +54,7 @@ function isPhoneValid(phone) {
 
 function hasAlreadySent(phone) {
   const phones = JSON.parse(localStorage.getItem('phones'));
-  console.log(phones);
-  return !!phones.includes(phone);
+  return phones.includes(phone);
 }
 
 function submitForm(form) {
