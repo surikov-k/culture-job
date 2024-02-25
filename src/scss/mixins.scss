@@ -1,0 +1,74 @@
+@mixin leftHoleBackground() {
+  background: url("/public/img/backgrounds/step-background.png") right bottom no-repeat,
+  url("/public/img/backgrounds/step-backgound-2.png") left center no-repeat;
+}
+
+@mixin rightHoleBackground() {
+  background: url("/public/img/backgrounds/step-background.png") right bottom no-repeat,
+  url("/public/img/backgrounds/step-backgound-3.png") right center no-repeat;
+}
+
+@mixin topHoleBackground() {
+  background: url("/public/img/backgrounds/step-background.png") right bottom no-repeat,
+  url("/public/img/backgrounds/step-backgound-4.png") center top no-repeat;
+}
+
+@mixin noHoleBackground() {
+  background: url("/public/img/backgrounds/step-background.png") right bottom no-repeat,
+  linear-gradient(135deg,
+                  var(--color-dark-background-2) 0%,
+                  var(--color-dark-background-3) 100%);
+}
+
+@mixin resetPosition() {
+    top: auto;
+    right: auto;
+    bottom: auto;
+    left: auto;
+}
+@mixin workflowArrow() {
+  position: absolute;
+  content: "";
+  background-color: #071DA7;
+  width: 20px;
+  height: 84px;
+  clip-path: path("M0,84l19.1-37.8c1.2-2.3,1.2-6,0-8.3L0,0L0,84z");
+}
+
+@mixin toRightWorkflowArrow() {
+  &::before {
+    @include resetPosition();
+    @include workflowArrow();
+    top: 50%;
+    right: -19px;
+    transform: translateY(-50%);
+  }
+}
+
+@mixin toLeftWorkflowArrow() {
+  &::before {
+    @include resetPosition();
+    @include workflowArrow();
+    top: 50%;
+    left: -19px;
+    transform: translateY(-50%) rotate(180deg);
+  }
+}
+
+@mixin toBottomWorkflowArrow() {
+  &::before {
+    @include resetPosition();
+    position: absolute;
+    bottom: -19px;
+    left: 50%;
+    width: 84px;
+    height: 20px;
+    content: "";
+    transform: translateX(-50%);
+    background-color: #3C41BC;
+    clip-path: path("m0,0l37.84,19.13c2.3,1.16,6.03,1.16,8.32,0L84,0H0Z");
+  }
+}
+
+
+

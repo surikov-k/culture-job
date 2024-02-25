@@ -1,0 +1,48 @@
+.manufactures {
+  position: relative;
+  padding-top: 154px;
+
+  padding-bottom: 150px;
+  background: var(--color-dark-background);
+
+  background: url("/public/img/backgrounds/wave.svg") center bottom / 1920px repeat-x,
+  url("/public/img/backgrounds/manufactures-background.jpg") center center;
+
+  &::before {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    display: block;
+    width: 100%;
+    height: 60px;
+
+    content: "";
+    transform: rotate(180deg);
+    background: url("/public/img/backgrounds/wave.svg") center bottom / 1920px repeat-x;
+  }
+
+  &__title {
+    margin-bottom: 42px;
+    text-align: center;
+    color: var(--color-light);
+  }
+
+  &__text {
+    line-height: 31px;
+    color: var(--color-light);
+  }
+
+  &__slider {
+    position: relative;
+
+    @media (max-width: 1550px) {
+      padding-inline: 80px;
+    }
+
+    @media (max-width: 1024px) {
+      padding-inline: 0;
+    }
+  }
+
+}

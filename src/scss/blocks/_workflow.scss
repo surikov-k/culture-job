@@ -1,0 +1,28 @@
+.workflow {
+  padding-top: 78px;
+  padding-bottom: 100px;
+
+  background: url("/public/img/backgrounds/workflow-background.png") center center repeat-x;
+
+  &__title {
+    margin-bottom: 24px;
+    text-align: center;
+  }
+
+  &__text {
+    font-size: 22px;
+    margin-bottom: 50px;
+    text-align: center;
+  }
+
+  &__steps {
+    margin-bottom: 48px;
+  }
+
+  &__button {
+    display: flex;
+    min-width: 300px;
+    background-color: var(--color-accent-2);
+    margin-inline: auto;
+  }
+}

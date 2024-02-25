@@ -1,0 +1,27 @@
+.answers {
+    position: relative;
+  padding-top: 146px;
+  padding-bottom: 95px;
+  background: url("/public/img/backgrounds/answers-background.png") right bottom no-repeat,
+  linear-gradient(95deg, #041080 -2.85%, #0926C0 93.37%);
+
+  &::before {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    display: block;
+    width: 100%;
+    height: 60px;
+
+    content: "";
+    transform: rotate(180deg);
+    background: url(/public/img/backgrounds/wave.svg) center bottom / 1920px repeat-x;
+  }
+
+  &__title {
+    margin-bottom: 40px;
+    text-align: center;
+    color: var(--color-light);
+  }
+}

@@ -1,0 +1,14 @@
+.title {
+  font-size: 45px;
+  font-weight: 700;
+  font-style: normal;
+  line-height: 45px;
+
+  color: var(--color-dark-2);
+  @media (max-width: 400px) {
+    font-size: 32px;
+    line-height: 32px;
+
+  }
+}
+

@@ -1,0 +1,67 @@
+.manufactures-slider {
+  margin-bottom: 15px;
+
+  &__list {
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 240px;
+    height: 145px;
+    padding: 30px;
+    border-radius: var(--border-radius);
+    background: var(--color-light);
+    box-shadow: 0 4px 30px 0 rgba(0, 0, 0, 0.05);
+  }
+
+  &__image {}
+
+  &__pagination {
+    display: flex;
+    justify-content: center;
+    padding-top: 10px;
+    .swiper-pagination-bullet {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--color-light);
+    }
+  }
+
+
+  &__control {
+    position: absolute;
+    z-index: 10;
+    top: 50%;
+    left:  -100px;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    transform: translateY(-50%);
+    background: url("/public/img/icons/slider-arrow.svg") center center no-repeat;
+
+    &--next {
+      right: -100px;
+      left: auto;
+      transform: translateY(-50%) rotate(180deg);
+    }
+
+    @media (max-width: 1550px) {
+      &--prev {
+        left: 0;
+      }
+      &--next {
+        right: 0;
+      }
+    }
+
+    @media (max-width: 1024px) {
+      display: none;
+    }
+  }
+  &__control.swiper-button-disabled {
+    display: none;
+  }
+}

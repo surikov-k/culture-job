@@ -1,0 +1,70 @@
+.answers-list {
+  &__definition {
+    overflow: hidden;
+    height: 0;
+    margin-bottom: 25px;
+    padding: 0 55px;
+    transition: all var(--transition-duration) ease;
+
+    border-bottom-right-radius: var(--border-radius);
+    border-bottom-left-radius: var(--border-radius);
+    background: var(--color-light);
+    will-change: max-height;
+  }
+
+  &__title {
+    font-size: 24px;
+    font-weight: 600;
+    font-style: normal;
+    line-height: 28px;
+
+    display: flex;
+    align-items: center;
+    padding: 30px 35px 30px 53px;
+    cursor: pointer;
+    color: var(--color-light);
+    border-radius: var(--border-radius);
+
+    background: linear-gradient(180deg, #969AF7 0%, #686EEC 100%);
+
+    &::after {
+      flex-shrink: 0;
+      width: 40px;
+      height: 40px;
+      margin-left: auto;
+      content: "";
+      border-radius: 50%;
+      background-color: var(--color-light);
+
+      background-image: url('data:image/svg+xml, <svg width="14" height="7" viewBox="0 0 14 7" fill="none" xmlns="http://www.w3.org/2000/svg"> <path d="M-0.000275542 5.83749C-0.000783516 5.68809 0.0321886 5.54048 0.0962172 5.4055C0.160246 5.27052 0.253705 5.15161 0.369725 5.05749L6.36972 0.227488C6.54866 0.0804063 6.7731 8.61916e-08 7.00472 8.34295e-08C7.23635 8.06674e-08 7.46079 0.0804063 7.63972 0.227488L13.6397 5.22749C13.8439 5.39723 13.9724 5.64114 13.9967 5.90556C14.0211 6.16999 13.9395 6.43327 13.7697 6.63749C13.6 6.8417 13.3561 6.97013 13.0916 6.99451C12.8272 7.01889 12.5639 6.93723 12.3597 6.76749L6.99972 2.29749L1.63972 6.61749C1.49294 6.73977 1.3142 6.81745 1.12465 6.84133C0.935101 6.86521 0.742677 6.83429 0.57015 6.75223C0.397622 6.67018 0.25221 6.54042 0.15112 6.37831C0.05003 6.2162 -0.00250734 6.02852 -0.000275542 5.83749Z" fill="darkblue"/></svg>');
+
+      background-repeat: no-repeat;
+      background-position: center center;
+    }
+
+  &.open {
+    color: #333;
+      background: linear-gradient(180deg, #FFF 50.57%, #BDC0FF 100%);
+      &::after {
+        background-color: var(--color-accent-1);
+        background-image: url('data:image/svg+xml, <svg width="14" height="7" viewBox="0 0 14 7" fill="none" xmlns="http://www.w3.org/2000/svg"> <path d="M14.0013 1.16105C14.0018 1.31044 13.9688 1.45805 13.9048 1.59303C13.8407 1.72801 13.7473 1.84693 13.6313 1.94105L7.63125 6.77105C7.45232 6.91813 7.22788 6.99853 6.99625 6.99853C6.76463 6.99853 6.54018 6.91813 6.36125 6.77105L0.361252 1.77105C0.157035 1.60131 0.028611 1.3574 0.00423124 1.09297C-0.0201485 0.828545 0.0615134 0.565264 0.231252 0.361047C0.40099 0.156831 0.644902 0.0284066 0.909328 0.00402685C1.17375 -0.0203529 1.43704 0.0613083 1.64125 0.231047L7.00125 4.70105L12.3613 0.381047C12.508 0.258764 12.6868 0.181087 12.8763 0.157207C13.0659 0.133328 13.2583 0.164245 13.4308 0.246301C13.6034 0.328357 13.7488 0.458116 13.8499 0.620227C13.9509 0.782337 14.0035 0.970013 14.0013 1.16105Z" fill="white"/> </svg>');
+      }
+
+      & + .answers-list__definition {
+        height: auto;
+        padding: 45px 55px;
+        box-shadow: 0 -10px 0 0 white;
+      }
+    }
+  }
+
+  &__text {
+    font-size: 20px;
+    font-weight: 400;
+    font-style: normal;
+    line-height: 27px;
+    margin-bottom: 30px;
+    transform: translateX(1%);
+    color: #333;
+  }
+}

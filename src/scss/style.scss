@@ -1,0 +1,26 @@
+@import
+  "normalize.css",
+  "fonts",
+  "mixins",
+  "variables",
+  "global",
+  "typography";
+
+@import
+  "blocks/button",
+  "blocks/callback-form",
+  "blocks/container",
+  "blocks/header",
+  "blocks/main-nav",
+  "blocks/promo";
+
+@import "blocks/benefits";
+@import "blocks/benefit-card";
+@import "blocks/manufactures";
+@import "blocks/manufactures-slider";
+@import "blocks/workflow";
+@import "blocks/steps";
+
+@import "blocks/answers";
+@import "blocks/answers-list";
+@import "blocks/footer";
