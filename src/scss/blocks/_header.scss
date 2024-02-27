@@ -9,7 +9,7 @@
   padding-bottom: 25px;
   color: var(--color-light);
   background:
-  url("/public/img/backgrounds/background.jpg") top center,
+  url("/img/backgrounds/background.jpg") top center,
   linear-gradient(90deg,
           var(--color-dark-background-2),
           var(--color-dark-background-2));
@@ -67,7 +67,7 @@
     width: 33px;
     height: 33px;
     content: "";
-    background: url("/public/img/icons/phone-icon.svg") center center no-repeat;
+    background: url("/img/icons/phone-icon.svg") center center no-repeat;
   }
 
   &__nav-toggle {

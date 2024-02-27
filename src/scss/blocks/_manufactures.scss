@@ -5,8 +5,8 @@
   padding-bottom: 150px;
   background: var(--color-dark-background);
 
-  background: url("/public/img/backgrounds/wave.svg") center bottom / 1920px repeat-x,
-  url("/public/img/backgrounds/manufactures-background.jpg") center center;
+  background: url("/img/backgrounds/wave.svg") center bottom / 1920px repeat-x,
+  url("/img/backgrounds/manufactures-background.jpg") center center;
 
   &::before {
     position: absolute;
@@ -19,7 +19,7 @@
 
     content: "";
     transform: rotate(180deg);
-    background: url("/public/img/backgrounds/wave.svg") center bottom / 1920px repeat-x;
+    background: url("/img/backgrounds/wave.svg") center bottom / 1920px repeat-x;
   }
 
   &__title {

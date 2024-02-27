@@ -1,20 +1,20 @@
 @mixin leftHoleBackground() {
-  background: url("/public/img/backgrounds/step-background.png") right bottom no-repeat,
-  url("/public/img/backgrounds/step-backgound-2.png") left center no-repeat;
+  background: url("/img/backgrounds/step-background.png") right bottom no-repeat,
+  url("/img/backgrounds/step-backgound-2.png") left center no-repeat;
 }
 
 @mixin rightHoleBackground() {
-  background: url("/public/img/backgrounds/step-background.png") right bottom no-repeat,
-  url("/public/img/backgrounds/step-backgound-3.png") right center no-repeat;
+  background: url("/img/backgrounds/step-background.png") right bottom no-repeat,
+  url("/img/backgrounds/step-backgound-3.png") right center no-repeat;
 }
 
 @mixin topHoleBackground() {
-  background: url("/public/img/backgrounds/step-background.png") right bottom no-repeat,
-  url("/public/img/backgrounds/step-backgound-4.png") center top no-repeat;
+  background: url("/img/backgrounds/step-background.png") right bottom no-repeat,
+  url("/img/backgrounds/step-backgound-4.png") center top no-repeat;
 }
 
 @mixin noHoleBackground() {
-  background: url("/public/img/backgrounds/step-background.png") right bottom no-repeat,
+  background: url("../img/backgrounds/step-background.png") right bottom no-repeat,
   linear-gradient(135deg,
                   var(--color-dark-background-2) 0%,
                   var(--color-dark-background-3) 100%);

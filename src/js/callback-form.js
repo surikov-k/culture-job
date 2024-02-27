@@ -1,7 +1,7 @@
-const API_URL = 'https://order.drcash.sh/v1/order';
-const API_TOKEN = 'NWJLZGEWOWETNTGZMS00MZK4LWFIZJUTNJVMOTG0NJQXOTI3';
+// const API_URL = 'https://order.drcash.sh/v1/order';
+// const API_TOKEN = 'NWJLZGEWOWETNTGZMS00MZK4LWFIZJUTNJVMOTG0NJQXOTI3';
 const CALLBACK_FORM_ID = 'callback-form';
-const VALIDATE_PHONE_REGEX = /^\+\d{1,3}\(\d{3}\)\s*\d{3}-\d{2}-\d{2}$/
+const VALIDATE_PHONE_REGEX = /^\+\d{1,3}\s*\(\d{3}\)\s*\d{3}-\d{2}-\d{2}$/
 const SHOW_ER0RR_CLASS = 'show-error';
 
 // 8c4976c8-7235-4aaf-a979-1c5ef22f4002
@@ -35,10 +35,10 @@ export function processCallbackForm() {
     }
   });
 
-  form.addEventListener('submit', function (event) {
-    event.preventDefault();
-    submitForm(form);
-  });
+  // form.addEventListener('submit', function (event) {
+  //   event.preventDefault();
+  //   submitForm(form);
+  // });
 }
 
 function setLocalStorage() {
@@ -57,40 +57,40 @@ function hasAlreadySent(phone) {
   return phones.includes(phone);
 }
 
-function submitForm(form) {
-  const phone = form.elements['phone'].value;
-  const name = form.elements['name'].value;
-  const sub1 = form.elements['hidden-field'].value;
-
-  fetch(API_URL, {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-      'Authorization': `Bearer ${ API_TOKEN }`,
-    },
-    body: JSON.stringify({
-      stream_code: 'iu244',
-      client: {
-        name,
-        phone
-      },
-      sub1,
-    }),
-  })
-    .then(response => response.json())
-    .then(data => {
-      if (data.uuid) {
-        savePhone(phone);
-        window.location.href = 'thank-you.html';
-      } else {
-        window.location.href = 'error.html';
-      }
-    })
-    .catch(error => {
-      console.error('Error:', error);
-      window.location.href = 'error.html';
-    });
-}
+// function submitForm(form) {
+//   const phone = form.elements['phone'].value;
+//   const name = form.elements['name'].value;
+//   const sub1 = form.elements['hidden-field'].value;
+//
+//   fetch(API_URL, {
+//     method: 'POST',
+//     headers: {
+//       'Content-Type': 'application/json',
+//       'Authorization': `Bearer ${ API_TOKEN }`,
+//     },
+//     body: JSON.stringify({
+//       stream_code: 'iu244',
+//       client: {
+//         name,
+//         phone
+//       },
+//       sub1,
+//     }),
+//   })
+//     .then(response => response.json())
+//     .then(data => {
+//       if (data.uuid) {
+//         savePhone(phone);
+//         window.location.href = 'thank-you.html';
+//       } else {
+//         window.location.href = 'error.html';
+//       }
+//     })
+//     .catch(error => {
+//       console.error('Error:', error);
+//       window.location.href = 'error.html';
+//     });
+// }
 
 function savePhone(phone) {
   const phones = JSON.parse(localStorage.getItem('phones'));

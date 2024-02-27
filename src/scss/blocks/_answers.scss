@@ -2,7 +2,7 @@
     position: relative;
   padding-top: 146px;
   padding-bottom: 95px;
-  background: url("/public/img/backgrounds/answers-background.png") right bottom no-repeat,
+  background: url("/img/backgrounds/answers-background.png") right bottom no-repeat,
   linear-gradient(95deg, #041080 -2.85%, #0926C0 93.37%);
 
   &::before {
@@ -16,7 +16,7 @@
 
     content: "";
     transform: rotate(180deg);
-    background: url(/public/img/backgrounds/wave.svg) center bottom / 1920px repeat-x;
+    background: url("/img/backgrounds/wave.svg") center bottom / 1920px repeat-x;
   }
 
   &__title {

@@ -1,3 +1,6 @@
+<?php
+require_once __DIR__ . '/helpers.php';
+?>
 <!doctype html>
 <html lang="ru">
 <head>
@@ -5,6 +8,7 @@
   <meta content="width=device-width, initial-scale=1.0"
         name="viewport"/>
   <title>Simitex</title>
+    <?= vite('main.js') ?>
 </head>
 <body class="page">
 
@@ -14,7 +18,7 @@
       <img
         alt="Simitex logo"
         height="28"
-        src="public/img/logo-simitex.svg"
+        src="img/logo-simitex.svg"
         width="155"
       >
     </a>
@@ -70,8 +74,7 @@
       <div class="promo__column">
         <h1 class="title promo__title"><span>Оптовые поставки</span>
           <span>электронных компонентов</span> <span>из&nbsp;Китая день&nbsp;в&nbsp;день</span></h1>
-        <p class="promo__text">Комплексные поставки электронных компонентов и оборудования. Подберем аналоги популярных
-                               брендов из Европы в условиях санкций.</p>
+        <p class="promo__text">Комплексные поставки электронных компонентов и оборудования. Подберем аналоги популярных брендов из Европы в условиях санкций.</p>
         <ul class="promo__list">
           <li class="promo__list-item">Отсрочка платежей для постоянных клиентов</li>
           <li class="promo__list-item">Бесплатная доставка по Москве и СПБ в течение 2х часов</li>
@@ -81,7 +84,9 @@
       <div class="promo__column">
         <div class="promo__form-container">
           <h2 class="title callback-form__title">Закажите обратный&nbsp;звонок</h2>
-          <form class="callback-form"
+          <form action="process-callback-form.php"
+                class="callback-form"
+                method="post"
                 id="callback-form">
 
             <div class="callback-form__field">
@@ -89,6 +94,7 @@
                      for="name">Ваше имя*</label>
               <input class="callback-form__input"
                      id="name"
+                     name="name"
                      placeholder="Петров Петр"
                      required
                      type="text"
@@ -100,6 +106,7 @@
                      for="phone">Ваш номер*</label>
               <input class="callback-form__input"
                      id="phone"
+                     name="phone"
                      placeholder="+7 ( _ _ _ ) _ _ _-_ _-_ _"
                      required
                      type="tel"
@@ -129,7 +136,7 @@
             <img alt="Иконка Качественная продукция"
                  class="benefit-card__icon-image"
                  height="163"
-                 src="public/img/benefits.png"
+                 src="img/benefits.png"
                  width="157">
 
             <div class="benefit-card__content">
@@ -144,7 +151,7 @@
             <img alt="Иконка Индивидуальный подход"
                  class="benefit-card__icon-image"
                  height="163"
-                 src="public/img/personal-approach.png"
+                 src="img/personal-approach.png"
                  width="157">
             <div class="benefit-card__content">
               <h3 class="title benefit-card__title">Индивидуальный подход</h3>
@@ -159,7 +166,7 @@
             <img alt="Иконка Бесплатная доставка"
                  class="benefit-card__icon-image"
                  height="163"
-                 src="public/img/free-delivery.png"
+                 src="img/free-delivery.png"
                  width="157">
             <div class="benefit-card__content">
               <h3 class="title benefit-card__title">Бесплатная доставка</h3>
@@ -174,7 +181,7 @@
             <img alt="Иконка Подбираем аналоги"
                  class="benefit-card__icon-image"
                  height="163"
-                 src="public/img/free-delivery.png"
+                 src="img/free-delivery.png"
                  width="157">
             <div class="benefit-card__content">
               <h3 class="title benefit-card__title">Подбираем аналоги</h3>
@@ -189,7 +196,7 @@
             <img alt="Иконка Резервный запас компонентов"
                  class="benefit-card__icon-image"
                  height="163"
-                 src="public/img/free-delivery.png"
+                 src="img/free-delivery.png"
                  width="157">
             <div class="benefit-card__content">
               <h3 class="title benefit-card__title">Резервный запас компонентов</h3>
@@ -203,7 +210,7 @@
             <img alt="Иконка Гибкая система оплаты"
                  class="benefit-card__icon-image"
                  height="163"
-                 src="public/img/free-delivery.png"
+                 src="img/free-delivery.png"
                  width="157">
             <div class="benefit-card__content">
               <h3 class="title benefit-card__title">Гибкая система оплаты</h3>
@@ -229,7 +236,7 @@
                   alt="Логотип производителя"
                   class="manufactures-slider__image"
                   height="94"
-                  src="public/img/manufactures-logos/aier.jpg"
+                  src="img/manufactures-logos/aier.jpg"
                   width="150"
                 >
               </a>
@@ -241,7 +248,7 @@
                   alt="Логотип производителя"
                   class="manufactures-slider__image"
                   height="47"
-                  src="public/img/manufactures-logos/foryard.jpg"
+                  src="img/manufactures-logos/foryard.jpg"
                   width="186"
                 >
               </a>
@@ -253,7 +260,7 @@
                   alt="Логотип производителя"
                   class="manufactures-slider__image"
                   height="106"
-                  src="public/img/manufactures-logos/fujicon.jpg"
+                  src="img/manufactures-logos/fujicon.jpg"
                   width="106"
                 >
               </a>
@@ -265,7 +272,7 @@
                   alt="Логотип производителя"
                   class="manufactures-slider__image"
                   height="116"
-                  src="public/img/manufactures-logos/js-artificial-grass.jpg"
+                  src="img/manufactures-logos/js-artificial-grass.jpg"
                   width="171"
                 >
               </a>
@@ -277,7 +284,7 @@
                   alt="Логотип производителя"
                   class="manufactures-slider__image"
                   height="40"
-                  src="public/img/manufactures-logos/marquis.jpg"
+                  src="img/manufactures-logos/marquis.jpg"
                   width="183"
                 >
               </a>
@@ -289,7 +296,7 @@
                   alt="Логотип производителя"
                   class="manufactures-slider__image"
                   height="94"
-                  src="public/img/manufactures-logos/aier.jpg"
+                  src="img/manufactures-logos/aier.jpg"
                   width="150"
                 >
               </a>
@@ -429,7 +436,7 @@
       <img
         alt="Simitex logo"
         height="28"
-        src="public/img/logo-simitex.svg"
+        src="img/logo-simitex.svg"
         width="155"
       >
     </a>
@@ -465,8 +472,5 @@
     <button class="button footer__button">Оставить заявку</button>
   </div>
 </footer>
-
-<script src="/src/js/main.js"
-        type="module"></script>
 </body>
 </html>
