@@ -4,7 +4,7 @@ import { Navigation, Pagination } from 'swiper/modules';
 export function initManufacturesSlider() {
   const slider = document.querySelector('.manufactures-slider');
   if (!slider) {
-
+    return;
   }
 
   const swiper = new Swiper('.swiper', {

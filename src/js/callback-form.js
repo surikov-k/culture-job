@@ -1,5 +1,4 @@
-// const API_URL = 'https://order.drcash.sh/v1/order';
-// const API_TOKEN = 'NWJLZGEWOWETNTGZMS00MZK4LWFIZJUTNJVMOTG0NJQXOTI3';
+
 const CALLBACK_FORM_ID = 'callback-form';
 const VALIDATE_PHONE_REGEX = /^\+\d{1,3}\s*\(\d{3}\)\s*\d{3}-\d{2}-\d{2}$/
 const SHOW_ER0RR_CLASS = 'show-error';
@@ -92,7 +91,18 @@ function hasAlreadySent(phone) {
 //     });
 // }
 
-function savePhone(phone) {
-  const phones = JSON.parse(localStorage.getItem('phones'));
-  localStorage.setItem('phones', JSON.stringify([...phones, phone]));
+
+export function savePhoneHandler() {
+  const savePhoneButton = document.getElementById('save-phone');
+
+  if (!savePhoneButton) {
+    return;
+  }
+
+  const phone = savePhoneButton.dataset.phone;
+
+  savePhoneButton.addEventListener('click', function () {
+    const phones = JSON.parse(localStorage.getItem('phones'));
+    localStorage.setItem('phones', JSON.stringify([...phones, phone]));
+  })
 }

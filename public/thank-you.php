@@ -1,5 +1,6 @@
 <?php
 require_once __DIR__ . '/helpers.php';
+session_start();
 ?>
 <!doctype html>
 <html lang="ru">
@@ -15,8 +16,12 @@ require_once __DIR__ . '/helpers.php';
 <body>
 <main>
   <section class="container">
-    <h1>Спасибо за заказ!</h1>
-    <a class="button" href="/">На главную</a>
+    <h1>Спасибо за заказ! </h1>
+    <p> Ваш заказ No <?= $_SESSION['uuid'] ?? '' ?> принят.</p>
+    <a class="button"
+       id="save-phone"
+       data-phone="<?= $_SESSION['phone'] ?? '' ?>"
+       href="/">На главную</a>
   </section>
 </main>
 </body>
